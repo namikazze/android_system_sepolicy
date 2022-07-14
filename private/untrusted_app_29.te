@@ -34,3 +34,6 @@ auditallow untrusted_app_29 self:udp_socket ioctl;
 
 allow untrusted_app_29 vold_exec:file r_file_perms;
 auditallow untrusted_app_29 vold_exec:file r_file_perms;
+
+# Allow hidden build props
+get_prop(untrusted_app_29, userdebug_or_eng_prop)
