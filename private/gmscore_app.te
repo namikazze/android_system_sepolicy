@@ -160,6 +160,8 @@ allowxperm gmscore_app apk_data_file:file ioctl {
   INCFS_IOCTL_GET_FILLED_BLOCKS
 };
 
+allow gmscore_app proc_filesystems:file r_file_perms;
+
 # Do not allow getting permission-protected network information from sysfs.
 neverallow gmscore_app sysfs_net:file *;
 
