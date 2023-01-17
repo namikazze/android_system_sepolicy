@@ -151,6 +151,15 @@ get_prop(gmscore_app, dck_prop)
 
 get_prop(gmscore_app, incremental_prop)
 
+# allow apps like Phonesky to check the file signature of an apk installed on
+# the Incremental File System, fill missing blocks and get the app status and loading progress
+allowxperm gmscore_app apk_data_file:file ioctl {
+  INCFS_IOCTL_READ_SIGNATURE
+  INCFS_IOCTL_FILL_BLOCKS
+  INCFS_IOCTL_GET_BLOCK_COUNT
+  INCFS_IOCTL_GET_FILLED_BLOCKS
+};
+
 # Do not allow getting permission-protected network information from sysfs.
 neverallow gmscore_app sysfs_net:file *;
 
