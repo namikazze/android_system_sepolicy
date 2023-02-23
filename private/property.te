@@ -61,7 +61,7 @@ system_public_prop(media_wfd_prop);
 treble_sysprop_neverallow(`
 
 enforce_sysprop_owner(`
-  neverallow domain {
+  neverallow { domain -init -dumpstate }{
     property_type
     -system_property_type
     -product_property_type
